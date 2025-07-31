@@ -1,40 +1,11 @@
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark text-white">
-  <div class="container-fluid">
-    <a class="navbar-brand pl-5" href="#" title="Two Point Consulting Engineers & Constructions">
-      Two Point Consulting<br>Engineers & Constructions
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          download our broucher <br>
-          <a href="/assets/CATALOGUETPCEC.pdf" download="CATALOGUETPCEC.pdf">
-            here
-          </a>  
-        </li>
-        <li class="nav-item">
-          <a class="nav-link d-flex align-items-center" href="tel:+9482539477">
-            <img src="/assets/smartphone-svgrepo-com.svg" width="40px" height="30px" alt="" class="me-2">
-            9482539477
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#about">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#services">Services</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#contact">Contact</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+<mat-toolbar color="primary" class="mat-elevation-z4">
+  <span class="pl-3">Two Point Consulting Engineers & Constructions</span>
+  <span class="spacer"></span>
+  <a mat-button routerLink="#about">About</a>
+  <a mat-button routerLink="#services">Services</a>
+  <a mat-button routerLink="#contact">Contact</a>
+</mat-toolbar>
 
 <!-- About Image Section -->
 <section id="aboutImage" class="mt-5">
@@ -97,87 +68,45 @@
 
 <!-- Services Section -->
 
-<section id="services" class="text-white pt-5 bg-dark" style="background-color: rgba(0, 0, 0, 0.4);">
+<section id="services" style="background-color: rgba(0, 0, 0, 0.4); padding-top: 3rem;" class="text-white">
   <h2 class="text-center pb-3 pt-5">Our Services</h2>
-  <div class="row g-4">
-    <div class="col-md-3">
-      <div class="card h-100 text-center p-3 bg-transparent text-white">
-        <i class="bi bi-house-door display-1"></i>
-        <h4 class="mt-3">Residential Construction</h4>
-        <p>Turn your vision into reality with our expert residential construction services.
-        </p>
-        <ul class="list-unstyled text-start ms-5">
-          <li>✔️ Custom Designs</li>
-          <li>✔️ Premium Quality Materials</li>
-          <li>✔️ On-Time Completion</li>
-          <li>✔️ Unbeatable price with quality</li>
+  <div class="card-grid">
+    <mat-card *ngFor="let service of services" class="service-card mat-elevation-z4">
+      <mat-card-header class="justify-content-center">
+        <mat-icon class="service-icon">{{ service.icon }}</mat-icon>
+      </mat-card-header>
+      <mat-card-title class="text-center">{{ service.title }}</mat-card-title>
+      <mat-card-content>
+        <p class="text-center">{{ service.description }}</p>
+        <ul>
+          <li *ngFor="let point of service.points">✔️ {{ point }}</li>
         </ul>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="card h-100 text-center p-3 bg-transparent text-white">
-        <i class="bi bi-building display-1"></i>
-        <h4 class="mt-3">Consulting</h4>
-        <p>Professional construction services for offices, retail spaces, and more.</p>
-        <ul class="list-unstyled text-start ms-5">
-          <li>✔️ Building Permission (Nirman 2.0)</li>
-          <li>✔️ Structural Consulting</li>
-          <li>✔️ Building Plans as per Vastu</li>
-          <li>✔️ NA/KJP Layouts</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="col-md-3">
-      <div class="card h-100 text-center p-3 bg-transparent text-white">
-        <i class="bi bi-tools display-1"></i>
-        <h4 class="mt-3">Waterproofing</h4>
-        <p>Enhance and protect your spaces with our professional waterproofing solutions.</p>
-        <ul class="list-unstyled text-start ms-5">
-          <li>✔️ Terrace Waterproofing</li>
-          <li>✔️ Bathroom Waterproofing</li>
-        </ul>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="card h-100 text-center p-3 bg-transparent text-white">
-        <i class="bi bi-tools display-1"></i>
-        <h4 class="mt-3">Interior Designing</h4>
-        <p>Elevate your spaces with our innovative and customized interior design solutions.</p>
-        <ul class="list-unstyled text-start ms-5">
-          <li>✔️ Architectural drawings</li>
-          <li>✔️ 3D Elevations</li>
-          <li>✔️ 3D Interior Designing</li>
-        </ul>
-      </div>
-    </div>
+      </mat-card-content>
+    </mat-card>
   </div>
 </section>
 
 <!-- why us section -->
-<section id="Why us" class="section-padding pt-5 bg-dark" style="background-color: rgba(0, 0, 0, 0.4);">
-  <div class="container-fluid text-white text-center">
-    <div class="row g-4 justify-content-center">
-      <div class="col-md-12">
-        <h2 class="text-center">Why Choose Us</h2>
-        <ul class="list-unstyled highlight-list">
-          <li>We prioritize quality in construction.</li>
-          <li>We build beautiful and elegant homes.</li>
-          <li>Timely completion of projects (Faster construction).</li>
-          <li>Confidence—Your home is built by reputed engineers.</li>
-          <li>Transparency—We provide a detailed list of materials used.</li>
-          <li>Effective financial planning with a clear payment schedule.</li>
-          <li>Cost-efficient and economic construction solutions.</li>
-        </ul>
-      </div>
-    </div>
+<section id="why-us" class="section-padding pt-5 bg-dark text-white">
+  <div class="container">
+    <h2 class="text-center mb-4">Why Choose Us</h2>
+    <mat-grid-list cols="4" rowHeight="100px" >
+      <mat-grid-tile *ngFor="let tile of whyUsPoints"
+                     [colspan]="tile.cols"
+                     [rowspan]="tile.rows"
+                     [style.background]="tile.color"
+                     style="padding: 10px; color: black; font-weight: 500;">
+        {{ tile.text }}
+      </mat-grid-tile>
+</mat-grid-list>
   </div>
 </section>
+
 
 <section class="bg-dark">
   <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
     <!-- Indicators -->
-    <div class="carousel-indicators">
+  <div class="carousel-indicators">
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
         aria-current="true" aria-label="Slide 1"></button>
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
@@ -211,7 +140,7 @@
     </div>
 
     <!-- Slides -->
-    <div class="d-flex justify-content-center align-items-center vh-50 ">
+     <div class="d-flex justify-content-center align-items-center vh-50 ">
       <div class="carousel-inner">
         <div class="carousel-item active">
           <img class="d-block w-50  mx-auto" src="/assets/carousalimgaes/1.jpg" alt="Slide 1">
@@ -262,7 +191,7 @@
 
 
       <!-- Controls -->
-      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
+ <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
       </a>
@@ -271,106 +200,79 @@
         <span class="sr-only">Next</span>
       </a>
     </div>
-  </div>
-</section>
-
+ </div>
+</section> 
 
 <!-- Contact Section -->
 
-<section id="contact" class="section-padding pt-5 bg-dark" style="background-color: rgba(0, 0, 0, 0.4);">
-  <div class="container-fluid text-white">
-    <h2 class="text-center mb-4">Contact Us</h2>
-    <div class="row">
+<section id="contact" style="background-color: rgba(0, 0, 0, 0.4); padding: 40px 20px;">
+  <div class="contact-container">
+    <h2 class="section-title">Contact Us</h2>
+    <div class="contact-grid">
+      <!-- Left Card: Contact Info -->
+      <mat-card class="contact-card mat-elevation-z4">
+        <mat-card-title>Contact Information</mat-card-title>
+        <mat-divider></mat-divider>
+        <mat-card-content>
+          <p><strong>Name:</strong> Er Iranna Kubasad</p>
+          <p><strong>Office:</strong> Two Point Consulting Engineers & Constructions</p>
+          <p><strong>Address:</strong><br>
+            Shri Siddalingeshwar Building,<br>
+            Opposite to Hari Sagar hotel, Ist floor, Malapur road,<br>
+            Shivaji Circle, Dharwad-580001, Karnataka, India
+          </p>
+        </mat-card-content>
+      </mat-card>
 
-      <div class="col-md-6 d-flex flex-column justify-content-center">
-        <!-- <h4 class="mb-3">Our Address</h4> -->
-        <table class="table table-dark">
-          <tbody>
-            <tr>
-              <th scope="row">Name</th>
-              <td>Er Iranna Kubasad</td>
-            </tr>
-            <tr>
-              <th scope="row">Office Name</th>
-              <td>Two Point Consulting Engineers & Constructions</td>
-            </tr>
-            <tr>
-              <th scope="row">Address</th>
-              <td>
-                Shri Siddalingeshwar Building,<br>
-                Opposite to Hari Sagar hotel, Ist floor, Malapur road, Dharwad.<br>
-                Shivaji Circle, Dharwad-580001, Karnataka, India
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">Phone</th>
-              <td><a href="tel:9482 539477">(91) 9482 539477</a></td>
-            </tr>
-            <tr>
-              <th scope="row">Email</th>
-              <td><a href="mailto:tpcec.info@gmail.com?subject=Inquiry&body=Hello, I would like to know more about your services.">tpcec.info&#64;gmail.com</a></td>
-            </tr>
-          </tbody>
-        </table>
-      
-        <!-- <h4 class="mt-4">Working Hours</h4> -->
-        
-      </div>
-      
-
-      <!-- Right Column: Address Details -->
-
-      <div class="col-md-6">
-        <table class="table table-dark">
-          <tbody>
-            <tr>
-              <th scope="row">Monday - Friday</th>
-              <td>10:00 AM - 7:00 PM</td>
-            </tr>
-            <tr>
-              <th scope="row">Saturday</th>
-              <td>10:00 AM - 4:00 PM</td>
-            </tr>
-            <tr>
-              <th scope="row">Sunday</th>
-              <td>Closed</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
+      <!-- Right Card: Working Hours -->
+      <mat-card class="contact-card mat-elevation-z4">
+        <mat-card-title>Working Hours</mat-card-title>
+        <mat-divider></mat-divider>
+        <mat-card-content>
+          <p><strong>Monday - Friday:</strong> 10:00 AM - 7:00 PM</p>
+          <p><strong>Saturday:</strong> 10:00 AM - 4:00 PM</p>
+          <p><strong>Sunday:</strong> Closed</p>
+        </mat-card-content>
+      </mat-card>
     </div>
   </div>
 </section>
+
 <app-floating-popup></app-floating-popup>
 
 <!-- Footer -->
-<footer class="text-center text-white py-3 bg-dark" style="background-color: rgba(0, 0, 0, 0.4);">
-  <div class="container">
-    <p>&copy; 2024 All rights reserved.</p>
-    <div class="mt-3">
-      <!-- Social Media Links -->
-      <a href="https://www.instagram.com/yourpage" target="_blank" class="text-white mx-2">
-        <fa-icon [icon]="faInstagram"></fa-icon>
+<footer class="footer-container">
+  <div class="footer-content">
+    <!-- Angular Material Nav List with Flexbox -->
+    <mat-nav-list class="footer-links">
+      <a mat-list-item href="https://www.instagram.com/yourpage" target="_blank">
+        <fa-icon [icon]="faInstagram" class="footer-icon"></fa-icon>
       </a>
-      <a href="https://www.facebook.com/yourpage" target="_blank" class="text-white mx-2">
-        <fa-icon [icon]="faFacebook"></fa-icon>
+
+      <a mat-list-item href="https://www.facebook.com/yourpage" target="_blank">
+        <fa-icon [icon]="faFacebook" class="footer-icon"></fa-icon>
       </a>
-      <a href="https://wa.me/yourwhatsappnumber" target="_blank" class="text-white mx-2">
-        <fa-icon [icon]="faWhatsapp"></fa-icon>
+
+      <a mat-list-item href="https://wa.me/yourwhatsappnumber" target="_blank">
+        <fa-icon [icon]="faWhatsapp" class="footer-icon"></fa-icon>
       </a>
-      <a href="https://www.youtube.com/yourchannel" target="_blank" class="text-white mx-2">
-        <fa-icon [icon]="faYoutube"></fa-icon>
+
+      <a mat-list-item href="https://www.youtube.com/yourchannel" target="_blank">
+        <fa-icon [icon]="faYoutube" class="footer-icon"></fa-icon>
       </a>
-      <a href="https://www.linkedin.com/in/yourprofile" target="_blank" class="text-white mx-2">
-        <fa-icon [icon]="faLinkedin"></fa-icon>
+
+      <a mat-list-item href="https://www.linkedin.com/in/yourprofile" target="_blank">
+        <fa-icon [icon]="faLinkedin" class="footer-icon"></fa-icon>
       </a>
-      <a href="https://maps.app.goo.gl/okeU7D84UYfwDTBz5" target="_blank" class="text-white mx-2">
-        <fa-icon [icon]="faMapMarkerAlt"></fa-icon>
+
+      <a mat-list-item href="https://maps.app.goo.gl/okeU7D84UYfwDTBz5" target="_blank">
+        <fa-icon [icon]="faMapMarkerAlt" class="footer-icon"></fa-icon>
       </a>
-      <a href="https://www.indiamart.com/yourpage" target="_blank" class="text-white mx-2">
-        <fa-icon [icon]="faStore"></fa-icon>
+
+      <a mat-list-item href="https://www.indiamart.com/yourpage" target="_blank">
+        <fa-icon [icon]="faStore" class="footer-icon"></fa-icon>
       </a>
-    </div>
+    </mat-nav-list>
   </div>
+   <p>&copy; 2024 All rights reserved.</p>
 </footer>
