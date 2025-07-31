@@ -1,0 +1,76 @@
+.bg-transparent {
+    background-color: rgba(0, 0, 0, 0.3) !important; /* Overriding the default */
+  }
+
+  a:hover {
+    color: #c6d6de;
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+  }
+
+  -----------------------------------------------
+
+  .highlight-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  .highlight-list li {
+    /* background: linear-gradient(120deg, #e0f7fa, #80deea); */
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.5s ease-in-out forwards;
+    opacity: 0; /* Initial opacity for animation */
+    transform: translateX(-20px); /* Initial position for slide-in */
+  }
+  
+  /* .highlight-list li:nth-child(odd) {
+    background: linear-gradient(120deg, #ffe0b2, #ffcc80);
+  } */
+  
+  .highlight-list li:hover {
+    transform: scale(1.05);
+    background: linear-gradient(120deg, #ffab91, #ff8a65);
+    transition: transform 0.3s, background 0.3s;
+  }
+  
+  /* Fade-in effect for the entire list */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Slide-in animation for list items */
+  @keyframes slideIn {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+
+  #aboutImage{
+    background-image: url('/assets/logo.jpg');
+  background-size: cover; /* Ensure the background image covers the entire element */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Prevent the background image from repeating */
+
+  /* Set width and height */
+  width: 100%; /* Width can be 100% or a specific value like 1000px */
+  height: 650px; /* Adjust the height as needed */
+   
+  }
+  #aboutImage .content {
+    text-align: center;
+    font-size: 24px;
+  }
