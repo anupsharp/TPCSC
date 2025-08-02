@@ -1,0 +1,36 @@
+ <h2 class="section-title">Contanct us</h2>
+<form [formGroup]="contactForm" (ngSubmit)="sendEmail()" class="contactformClass">
+    <mat-form-field class="formField">
+        <mat-label>Your Name</mat-label>
+        <input matInput formControlName="from_name" required>
+    </mat-form-field>
+
+    <mat-form-field class="formField">
+        <mat-label>Your Email</mat-label>
+        <input matInput formControlName="from_email" required>
+    </mat-form-field>
+
+    <mat-form-field class="formField">
+        <mat-label>Subject</mat-label>
+        <input matInput formControlName="subject">
+    </mat-form-field>
+
+    <mat-form-field class="formField">
+        <mat-label>Message</mat-label>
+        <textarea matInput formControlName="message" rows="5"></textarea>
+    </mat-form-field>
+
+    <div class="button-container">
+        <button mat-raised-button color="primary" type="submit" class="action-button">
+            Send Message
+        </button>
+        <button mat-raised-button color="warn" type="reset" class="action-button">
+            Reset
+        </button>
+    </div>
+
+</form>
+
+<p *ngIf="statusMessage" style="margin-top: 15px;">
+    {{ statusMessage }}
+</p>
