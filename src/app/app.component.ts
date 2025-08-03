@@ -46,12 +46,11 @@ export class AppComponent {
     image: "/assets/justdial-seeklogo.svg",
     name: "Justdial"
   }]
-  socialIcons = [faInstagram, faFacebook, faWhatsapp, faYoutube, faLinkedin, faMapMarkerAlt, faStore]
+  socialIcons = [faInstagram, faFacebook, faYoutube, faLinkedin, faMapMarkerAlt, faStore]
 
   socialLinks = [
     'https://www.instagram.com/yourpage',
     'https://www.facebook.com/yourpage',
-    'https://wa.me/yourwhatsappnumber',
     'https://www.youtube.com/yourchannel',
     'https://www.linkedin.com/in/yourprofile',
     'https://maps.app.goo.gl/okeU7D84UYfwDTBz5',

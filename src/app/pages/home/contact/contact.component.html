@@ -1,36 +1,67 @@
- <h2 class="section-title">Contanct us</h2>
-<form [formGroup]="contactForm" (ngSubmit)="sendEmail()" class="contactformClass">
-    <mat-form-field class="formField">
-        <mat-label>Your Name</mat-label>
-        <input matInput formControlName="from_name" required>
-    </mat-form-field>
-
-    <mat-form-field class="formField">
-        <mat-label>Your Email</mat-label>
-        <input matInput formControlName="from_email" required>
-    </mat-form-field>
-
-    <mat-form-field class="formField">
-        <mat-label>Subject</mat-label>
-        <input matInput formControlName="subject">
-    </mat-form-field>
-
-    <mat-form-field class="formField">
-        <mat-label>Message</mat-label>
-        <textarea matInput formControlName="message" rows="5"></textarea>
-    </mat-form-field>
-
-    <div class="button-container">
-        <button mat-raised-button color="primary" type="submit" class="action-button">
-            Send Message
-        </button>
-        <button mat-raised-button color="warn" type="reset" class="action-button">
-            Reset
-        </button>
+    <h2 class="section-title">Contact Us</h2>
+<div class="contact-container">
+  <!-- Left Column: Company Info Card -->
+ <mat-card class="info-card">
+  <mat-card-header>
+    <mat-card-title >Company Details</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="info-row">
+      <mat-icon color="accent">person</mat-icon>
+      <div class="info-text"><strong>Owner:</strong> Mr. Iranna K</div>
     </div>
 
-</form>
+    <div class="info-row">
+      <mat-icon color="accent">location_on</mat-icon>
+      <div class="info-text">
+        <strong>Address:</strong><br>
+        Two Point Consulting Engineers & Constructions,<br>
+        1st Floor, ABC Complex,<br>
+        Hubli-Dharwad Road,<br>
+        Karnataka 580001
+      </div>
+    </div>
 
-<p *ngIf="statusMessage" style="margin-top: 15px;">
-    {{ statusMessage }}
-</p>
+    <div class="info-row">
+      <mat-icon color="accent">schedule</mat-icon>
+      <div class="info-text">
+        <strong>Office Hours:</strong><br>
+        Monday – Saturday<br>
+        10:00 AM – 6:00 PM
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+
+  <!-- Right Column: Contact Form -->
+  <div class="form-wrapper">
+    <form [formGroup]="contactForm" (ngSubmit)="sendEmail()" class="contactformClass">
+      <mat-form-field class="formField">
+        <mat-label>Your Name</mat-label>
+        <input matInput formControlName="from_name" required>
+      </mat-form-field>
+
+      <mat-form-field class="formField">
+        <mat-label>Your Email</mat-label>
+        <input matInput formControlName="from_email" required>
+      </mat-form-field>
+
+      <mat-form-field class="formField">
+        <mat-label>Subject</mat-label>
+        <input matInput formControlName="subject">
+      </mat-form-field>
+
+      <mat-form-field class="formField">
+        <mat-label>Message</mat-label>
+        <textarea matInput formControlName="message" rows="5"></textarea>
+      </mat-form-field>
+
+      <div class="button-container">
+        <button mat-raised-button color="primary" type="submit" class="action-button">Send Message</button>
+        <button mat-raised-button color="warn" type="reset" class="action-button">Reset</button>
+      </div>
+    </form>
+    <p *ngIf="statusMessage">{{ statusMessage }}</p>
+  </div>
+</div>

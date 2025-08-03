@@ -5,10 +5,13 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import emailjs, { type EmailJSResponseStatus } from '@emailjs/browser';
+import { MatCardModule } from '@angular/material/card';
+import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-contact',
-  imports: [MatInputModule, MatFormFieldModule, ReactiveFormsModule, CommonModule],
+  imports: [MatInputModule, MatFormFieldModule, ReactiveFormsModule, CommonModule,MatCardModule,MatListModule,MatIconModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.css'
 })
