@@ -8,6 +8,7 @@ import emailjs, { type EmailJSResponseStatus } from '@emailjs/browser';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
+import { environment } from '../../../../Environmets/environment';
 
 @Component({
   selector: 'app-contact',
@@ -34,10 +35,10 @@ export class ContactComponent {
     const templateParams = this.contactForm.value;
 
     emailjs.send(
-      'service_b7z73pr',
-      'template_lbcou5w',
+     environment.emailjs.serviceID,
+      environment.emailjs.templateID,
       templateParams,
-      'GOeydqSleTccgkS9d'
+      environment.emailjs.publicKey
     ).then(() => {
       this.statusMessage = 'Message sent successfully!';
       this.contactForm.reset();
