@@ -66,3 +66,7 @@
   white-space: normal;
   word-break: break-word;
 }
+
+mat-card-title{
+  margin-bottom: 15px;
+}
