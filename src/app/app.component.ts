@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faInstagram, faFacebook, faWhatsapp, faYoutube, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { faMapMarkerAlt, faStore } from '@fortawesome/free-solid-svg-icons';
+import { faArrowUp, faMapMarkerAlt, faStore } from '@fortawesome/free-solid-svg-icons';
 import { FloatingPopupComponent } from '../app/floating-popup/floating-popup.component'
 import { MatToolbarModule } from '@angular/material/toolbar'
 import { MatButtonModule } from '@angular/material/button'
@@ -37,6 +37,11 @@ import { HomeComponent } from './pages/home/home.component';
 export class AppComponent {
   title = 'TPCSC';
 
+  showPopup = false;
+  showScrollTopButton = false;
+  faArrowUp = faArrowUp
+
+
   ratings = [{
     url: "https://g.page/r/CZhpJE5XXvoZEBM",
     image: "/assets/google-my-business-logo.svg",
@@ -56,5 +61,15 @@ export class AppComponent {
     'https://maps.app.goo.gl/okeU7D84UYfwDTBz5',
     'https://www.indiamart.com/yourpage'
   ];
+
+
+  scrollToTop(): void {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+   @HostListener('window:scroll', [])
+  onWindowScroll() {
+    this.showScrollTopButton = window.scrollY > 200;
+  }
 
 }

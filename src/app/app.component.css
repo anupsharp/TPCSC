@@ -58,3 +58,24 @@
   text-align: right;
   flex: 1;
 }
+
+
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 150px; /* Above the contact button */
+  right: 25px;
+  padding: 20px;
+  border: none;
+  border-radius: 20%;
+  background-color: #10c90d;
+  font-size: 38px;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s;
+}
+
+.scroll-to-top:hover {
+  background-color: #0e9a0e;
+}

@@ -30,3 +30,12 @@
   </div>
   <p>&copy; 2024 All rights reserved.</p>
 </footer>
+
+
+<button 
+  class="scroll-to-top" 
+  title="Back to Top" 
+  *ngIf="showScrollTopButton" 
+  (click)="scrollToTop()">
+ <fa-icon [icon]="faArrowUp"></fa-icon>
+</button>

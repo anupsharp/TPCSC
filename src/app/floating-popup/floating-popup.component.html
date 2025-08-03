@@ -1,27 +1,11 @@
-<div class="floating-popup" (click)="togglePopup()">
-  <span>Contact</span>
-</div>
-
-<!-- Pop-Up Content -->
-<div class="popup-content" [ngClass]="{'show': isPopupVisible}">
-
-  <!-- Call Us Link -->
-  <a href="tel:+919482539477" class="icon-link">
-    <fa-icon [icon]="faPhone" size="2x" class="text-green"></fa-icon>
-    <span>Call Us</span>
+<div class="floating-contact">
+  <!-- Call Us -->
+  <a href="tel:+919482539477" class="icon-link" title="Call Us">
+    <fa-icon [icon]="faPhone" size="3x" class="text-green"></fa-icon>
   </a>
 
-  <a href="https://wa.me/919482539477" target="_blank" class="icon-link">
-    <fa-icon [icon]="faWhatsapp" size="2x" class="text-green"></fa-icon>
-    <span>WhatsApp</span>
+  <!-- WhatsApp -->
+  <a href="https://wa.me/919482539477" target="_blank" class="icon-link" title="WhatsApp">
+    <fa-icon [icon]="faWhatsapp" size="3x" class="text-green"></fa-icon>
   </a>
-
 </div>
-
-<button 
-  class="scroll-to-top" 
-  title="Back to Top" 
-  *ngIf="showScrollTopButton" 
-  (click)="scrollToTop()">
- <fa-icon [icon]="faArrowUp"></fa-icon>
-</button>

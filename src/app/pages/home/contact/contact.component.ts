@@ -37,6 +37,7 @@ export class ContactComponent {
       'service_b7z73pr',
       'template_lbcou5w',
       templateParams,
+      'GOeydqSleTccgkS9d'
     ).then(() => {
       this.statusMessage = 'Message sent successfully!';
       this.contactForm.reset();

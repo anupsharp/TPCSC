@@ -1,24 +1,28 @@
-.discount-banner {
-  background-color: #FEBA4A; /* your highlight yellow */
-  color: #333C4B;             /* your dark base color */
-  text-align: center;
-  padding: 12px 20px;
-  font-size: 18px;
-  font-weight: 600;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-.banner-link {
+.scrolling-banner {
+  background-color: #FEBA4A;
   color: #333C4B;
-  text-decoration: underline;
-  font-weight: bold;
-  margin-left: 10px;
-  transition: color 0.3s ease;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 12px 0;
+  position: relative;
+  font-weight: 600;
+  font-size: 18px;
 }
 
-.banner-link:hover {
-  color: #fff;
+.scrolling-text {
+  display: inline-block;
+  animation: scrollText 20s linear infinite;
+}
+
+.scrolling-text span {
+  margin-right: 100px;
+}
+
+@keyframes scrollText {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
